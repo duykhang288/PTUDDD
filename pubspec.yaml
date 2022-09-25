@@ -29,6 +29,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  intl: ^0.17.0
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -65,7 +66,7 @@ flutter:
      - family: Anton
        fonts:
          - asset: assets/fonts/Anton-Regular.ttf
-         
+ 
   
 
   # To add assets to your application, add an assets section, like this:
