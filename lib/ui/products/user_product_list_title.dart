@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'package:myshop/ui/products_manager.dart';
+import 'package:provider/provider.dart';
 import '../../models/product.dart';
 
 class UserProductListTitle extends StatelessWidget {
@@ -30,7 +31,17 @@ class UserProductListTitle extends StatelessWidget {
     return IconButton(
       icon: const Icon(Icons.delete),
       onPressed: () async {
-        print('Delete a product');
+        context.read<ProductsManager>().deleteProduct(product.id!);
+        ScaffoldMessenger.of(context)
+          ..hideCurrentMaterialBanner()
+          ..showSnackBar(
+            const SnackBar(
+              content: Text(
+                'Product deleted',
+                textAlign: TextAlign.center,
+              ),
+            ),
+          );
       },
       color: Theme.of(context).errorColor,
     );
