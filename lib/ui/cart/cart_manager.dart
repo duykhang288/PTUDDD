@@ -66,7 +66,7 @@ class CartManager with ChangeNotifier {
       _items.update(
         productId,
         (existingCartItem) => existingCartItem.copyWith(
-          quantity: existingCartItem.quantity - 1 ;
+          quantity: existingCartItem.quantity - 1,
         ),
       );
     } else {
@@ -74,6 +74,7 @@ class CartManager with ChangeNotifier {
     }
     notifyListeners();
   }
+
   void clear() {
     _items = {};
     notifyListeners();
