@@ -1,11 +1,12 @@
 import 'cart_item.dart';
 
-class OrderItem {
+class OrderItem{
   final String? id;
   final double amount;
   final List<CartItem> products;
   final DateTime dateTime;
-  int get productCount {
+
+  int get productCount{
     return products.length;
   }
 
@@ -21,7 +22,7 @@ class OrderItem {
     double? amount,
     List<CartItem>? products,
     DateTime? dateTime,
-  }) {
+  }){
     return OrderItem(
       id: id ?? this.id,
       amount: amount ?? this.amount,

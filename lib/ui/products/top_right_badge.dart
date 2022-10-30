@@ -7,6 +7,7 @@ class TopRightBadge extends StatelessWidget {
     required this.data,
     this.color,
   });
+
   final Widget child;
   final Object data;
   final Color? color;
@@ -27,8 +28,8 @@ class TopRightBadge extends StatelessWidget {
               color: color ?? Theme.of(context).colorScheme.secondary,
             ),
             constraints: const BoxConstraints(
-              minHeight: 16,
               minWidth: 16,
+              minHeight: 16,
             ),
             child: Text(
               data.toString(),

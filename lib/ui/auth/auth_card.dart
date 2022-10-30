@@ -133,7 +133,7 @@ class _AuthCardState extends State<AuthCard> {
   Widget _buildSubmitButton() {
     return ElevatedButton(
       onPressed: _submit,
-      style: ElevatedButton.styleFrom(
+      style: TextButton.styleFrom(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(30),
         ),

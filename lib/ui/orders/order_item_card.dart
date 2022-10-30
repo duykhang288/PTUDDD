@@ -1,13 +1,10 @@
 import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-
 import '../../models/order_item.dart';
 
 class OrderItemCard extends StatefulWidget {
   final OrderItem order;
-
   const OrderItemCard(this.order, {super.key});
 
   @override
@@ -30,38 +27,38 @@ class _OrderItemCardState extends State<OrderItemCard> {
     );
   }
 
-  Widget buildOrderDetails() {
+  Widget buildOrderDetails(){
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 4),
       height: min(widget.order.productCount * 20.0 + 10, 100),
       child: ListView(
-          children: widget.order.products
-              .map(
-                (prod) => Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Text(
-                      prod.title,
-                      style: const TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    Text(
-                      '${prod.quantity}x \$${prod.price}',
-                      style: const TextStyle(
-                        fontSize: 18,
-                        color: Colors.grey,
-                      ),
-                    )
-                  ],
+        children: widget.order.products
+          .map(
+            (prod) => Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Text(
+                  prod.title,
+                  style: const TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
-              )
-              .toList()),
+                Text(
+                  '${prod.quantity}x \$${prod.price}',
+                  style: const TextStyle(
+                    fontSize: 18,
+                    color: Colors.grey,
+                  ),
+                )
+              ],
+            ),
+          )
+          .toList(),
+      ),
     );
   }
-
-  Widget buildOrderSummary() {
+  Widget buildOrderSummary(){
     return ListTile(
       title: Text('\$${widget.order.amount}'),
       subtitle: Text(
@@ -69,7 +66,7 @@ class _OrderItemCardState extends State<OrderItemCard> {
       ),
       trailing: IconButton(
         icon: Icon(_expanded ? Icons.expand_less : Icons.expand_more),
-        onPressed: () {
+        onPressed: (){
           setState(() {
             _expanded = !_expanded;
           });

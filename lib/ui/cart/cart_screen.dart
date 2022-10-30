@@ -1,14 +1,11 @@
+import '../orders/order_manager.dart';
 import 'package:flutter/material.dart';
-import 'package:myshop/models/cart_item.dart';
-import 'package:myshop/models/product.dart';
-import 'package:myshop/ui/orders/order_manager.dart';
 import 'package:provider/provider.dart';
 import 'cart_manager.dart';
 import 'cart_item_card.dart';
 
 class CartScreen extends StatelessWidget {
   static const routeName = '/cart';
-
   const CartScreen({super.key});
 
   @override
@@ -34,7 +31,7 @@ class CartScreen extends StatelessWidget {
     return ListView(
       children: cart.productEntries
           .map(
-            (entry) => CardItemCard(
+            (entry) => CartItemCard(
               productId: entry.key,
               cardItem: entry.value,
             ),

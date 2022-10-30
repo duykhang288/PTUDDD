@@ -1,14 +1,13 @@
+import 'cart_manager.dart';
 import 'package:flutter/material.dart';
-import 'package:myshop/ui/cart/cart_manager.dart';
 import 'package:provider/provider.dart';
 import '../../models/cart_item.dart';
 import '../shared/dialog_utils.dart';
 
-class CardItemCard extends StatelessWidget {
+class CartItemCard extends StatelessWidget {
   final String productId;
   final CartItem cardItem;
-
-  const CardItemCard({
+  const CartItemCard({
     required this.productId,
     required this.cardItem,
     super.key,
@@ -36,17 +35,17 @@ class CardItemCard extends StatelessWidget {
       confirmDismiss: (direction) {
         return showConfirmDialog(
           context,
-          'Do you want to remove the item form the cart',
+          'Do you want to remove the item from the cart?',
         );
       },
       onDismissed: (direction) {
         context.read<CartManager>().removeItem(productId);
       },
-      child: buildItemCard(),
+      child: buidItemCard(),
     );
   }
 
-  Widget buildItemCard() {
+  Widget buidItemCard() {
     return Card(
       margin: const EdgeInsets.symmetric(
         horizontal: 15,
